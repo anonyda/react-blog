@@ -5,7 +5,8 @@ import styles from './Blogs.module.css';
 
 export default function Blogs() {
     const [blogs, setBlogs] = useState([]);
-    const blogURL = 'https://blog-backend-express.herokuapp.com/blogs';
+    // const blogURL = 'https://blog-backend-express.herokuapp.com/blogs';
+    const blogURL = `http://localhost:4000/blogs`
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -16,7 +17,7 @@ export default function Blogs() {
         }
 
         fetchBlogs();
-    }, [])
+    }, [blogURL])
     return (
         <div className={styles.blogs}>
             {blogs.map((blog) => {

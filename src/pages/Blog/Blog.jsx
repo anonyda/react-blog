@@ -9,7 +9,9 @@ import styles from './Blog.module.css';
 export default function Blog() {
     const [blog, setBlog] = useState({}); 
     const { blogId } = useParams(); 
-    const blogURL = `https://blog-backend-express.herokuapp.com/blogs/${blogId}`;
+    // const blogURL = `https://blog-backend-express.herokuapp.com/blogs/${blogId}`;
+    const blogURL = `http://localhost:4000/blogs/${blogId}`;
+
     useEffect(() => {
         const fetchBlog = async () => {
             console.log(blogId);
