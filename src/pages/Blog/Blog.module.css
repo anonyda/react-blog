@@ -1,0 +1,10 @@
+.mainContainer{
+    display: flex;
+    background-color: #E8EAEE;
+}
+
+@media (max-width: 768px) {
+    .mainContainer{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,8 @@
+.blogs{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    padding-top: 1rem;
+    /* max-width: 1000px; */
+}
