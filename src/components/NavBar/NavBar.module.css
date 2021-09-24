@@ -73,6 +73,13 @@ a{
     color: black;
 }
 
+p{
+    display: inline;
+    /* margin-right: 20px; */
+
+
+}
+
 @media (max-width: 768px) {
     .logo{
         margin-left: 2rem;

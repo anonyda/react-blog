@@ -48,6 +48,8 @@
 .blogContent{
     text-align: justify;
     font-size: 20px;
+    display: block;
+    /* display: unset; */
     /* border: 2px solid red; */
 }
 
