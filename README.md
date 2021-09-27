@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# The Web Dev Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Web Dev Blog is a blogging platform that makes use of [BloggIt](https://github.com/anonyda/blog-backend) Backend to fetch and display blogs. 
+It is built using React and Redux, and is secured by a basic authentication with a login functionality facilitated by a custom [authentication server](https://github.com/anonyda/auth-server).
 
-## Available Scripts
+## Live Link
+
+[https://anonyda.github.io/react-blog](https://anonyda.github.io/react-blog)
+
+The project is hosted on Github Pages. The APIs this project consumes are hosted on Heroku.
+
+## Run This Project Locally
+
+Clone the project, and navigate to the project directory.
+
+```bash
+git clone https://github.com/anonyda/react-blog.git
+cd react-blog
+```
 
 In the project directory, you can run:
 
-### `npm start`
+```bash
+npm start
+```
+This runs the app in the development mode.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The Flow
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To view the blog posts, you need to log in. If you don't have an account, you can create a new account by signing up. 
+Once you log in, you will be able to view all the blogs.
+You can click on a blog card, if you want to read more about it. 
 
-### `npm test`
+### State Management
+There are two states in the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Authentication
+2. Error
 
-### `npm run build`
+The Authentication state keeps track of whether you are logged in or not, and with that decides the routes you can/cannot access.\
+The Error state keeps track of the app errors and displays a modal indicating the error if it occurs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Directory Structure
+```
+.
+└── src
+|    ├── App.css
+|    ├── App.js
+|    ├── App.test.js
+|    ├── components
+|    │   ├── Aside
+|    │   │   ├── Aside.jsx
+|    │   │   └── Aside.module.css
+|    │   ├── Banner
+|    │   │   ├── Banner.jsx
+|    │   │   └── Banner.module.css
+|    │   ├── Blog
+|    │   │   ├── Blog.jsx
+|    │   │   └── Blog.module.css
+|    │   ├── Blogs
+|    │   │   ├── Blogs.jsx
+|    │   │   └── Blogs.module.css
+|    │   ├── Footer
+|    │   │   ├── Footer.jsx
+|    │   │   └── Footer.module.css
+|    │   ├── LoginForm
+|    │   │   ├── LoginForm.jsx
+|    │   │   └── Login.module.css
+|    │   ├── Modal
+|    │   │   ├── Modal.jsx
+|    │   │   └── Modal.module.css
+|    │   ├── NavBar
+|    │   │   ├── NavBar.jsx
+|    │   │   └── NavBar.module.css
+|    │   ├── ProtectedRoute
+|    │   │   └── ProtectedRoute.jsx
+|    │   ├── SignUpForm
+|    │   │   └── SignUp.jsx
+|    │   └── SingleBlog
+|    │       ├── SingleBlog.jsx
+|    │       └── SingleBlog.module.css
+|    ├── index.css
+|    ├── index.js
+|    ├── logo.svg
+|    ├── pages
+|    │   ├── Blog
+|    │   │   ├── Blog.jsx
+|    │   │   └── Blog.module.css
+|    │   └── Home
+|    │       ├── Home.jsx
+|    │       └── Home.module.css
+|    ├── redux
+|    │   ├── features
+|    │   │   ├── appError
+|    │   │   │   └── appErrorSlice.js
+|    │   │   └── user
+|    │   │       └── userSlice.js
+|    │   └── store
+|    │       └── store.js
+|    ├── reportWebVitals.js
+|    ├── routing
+|    │   └── AppRouter.js
+|    ├── setupTests.js
+|    └── utils
+|        ├── checkError.js
+|        └── constants.js
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## To Do
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Add Create Blog Post Feature
