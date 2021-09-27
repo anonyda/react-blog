@@ -119,3 +119,4 @@ The Error state keeps track of the app errors and displays a modal indicating th
 ## To Do
 
 * Add Create Blog Post Feature
+* Add A Spinner For Loading Data
